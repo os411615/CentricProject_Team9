@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using CentricProject_Team9.Models; // This is needed to access the models
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace CentricProject_Team9.DAL
 {
@@ -18,8 +19,14 @@ namespace CentricProject_Team9.DAL
         public DbSet<Recognition> Recognitions { get; set; }
         public DbSet<EmployeeRecognition> EmployeeRecognitions { get; set; }
 
-        private MIS4200Team9Context db = new MIS4200Team9Context();
+        
+
+        //private MIS4200Team9Context db = new MIS4200Team9Context();
         // GET: Users
-       
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
+
     }
 }
