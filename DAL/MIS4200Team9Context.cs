@@ -17,5 +17,9 @@ namespace CentricProject_Team9.DAL
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Recognition> Recognitions { get; set; }
         public DbSet<EmployeeRecognition> EmployeeRecognitions { get; set; }
+
+        private MIS4200Team9Context db = new MIS4200Team9Context();
+        // GET: Users
+       
     }
 }
