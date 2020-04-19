@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CentricProject_Team9.Models.Recognition>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.recognitionTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.recognitionExplanation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recognitionTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recognitionExplanation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.recognitionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.recognitionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.recognitionID })
+        </td>
+    </tr>
+}
+
+</table>
