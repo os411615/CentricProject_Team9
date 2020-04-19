@@ -8,6 +8,7 @@ namespace CentricProject_Team9.Models
 {
     public class EmployeeDetails
     {
+        //
         [Key]
         [Required]
         public Guid employeeID { get; set; }

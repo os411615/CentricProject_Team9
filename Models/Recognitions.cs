@@ -10,6 +10,7 @@ namespace CentricProject_Team9.Models
 {
     public class Recognitions
     {
+//
         [Key]
         public int recognitionID { get; set; }
 
